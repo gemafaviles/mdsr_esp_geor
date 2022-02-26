@@ -1,7 +1,7 @@
 Análisis geoestadístico con `geoR`
 ========================================================
 author: Gema Fernández-Avilés (gema.faviles@uclm.es)
-date: '09-02-2022'
+date: '26-02-2022'
 autosize: false
 
 

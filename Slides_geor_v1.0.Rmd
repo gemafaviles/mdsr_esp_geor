@@ -14,8 +14,6 @@ biblio-style: apalike
 output:
     slidy_presentation:
 #   html_document:
-    fig_width: 5
-    fig_height: 5
     logo: logo_mdsr_uclm.png
     toc: yes
     toc_float: true
@@ -32,9 +30,10 @@ output:
 # opciones predeterminadas
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
-  fig.width=8, fig.height=5, fig.retina=3,
-  out.width = "50%",
-  out.height="50",
+  fig.width=7, fig.height=6, 
+  fig.retina=3,
+ # out.width = "30%",
+ # out.height="30%",
   echo = TRUE,
   message = FALSE, 
   warning = FALSE,
@@ -51,6 +50,21 @@ knitr::opts_chunk$set(
 <center>
 <img src="logo_mdsr_uclm.png" height="100px"/>
 </center>  
+
+### Profesores
+
+<center>
+<img src="img/JMM.png" height="100px"/>
+<img src="img/GEMA.jpg" height="100px"/>
+</center>  
+
+### Material: 
+
+* Diapositivas básicas para llevar a cabo R de un análisis geoestadítico con la librería `geoR`
+
+* Hoja de trucos con los pasos necesarios
+
+* Videoclase explicativa del material proporcionado.
 
 --- 
 
@@ -115,7 +129,7 @@ semivar_teo # contiene los parámetros del semivariograma teórico
 ```
 
 
-### [Paso 5.]{style="color:red"}. Kriging ordinario
+### [Paso 5.]{style="color:red"} Kriging ordinario
 ```{r cod_krig, eval=FALSE}
 xx <- seq(min, max, l = 51)  #min y #máx para el eje x
 yy <- seq(min, max, l = 51)  #min y #máx para el eje y
@@ -164,7 +178,7 @@ Ejemplo tomado de **Montero, J. M., Fernández-Avilés, G., & Mateu, J. (2015). 
 
 ### [Objetivo]{style="color:blue"} Predicción puntual del nivel de CO en la ciudad de Madrid
 
-```{r ms_madrid, echo=FALSE, fig.width=5,  fig.height=5}
+```{r ms_madrid, echo=FALSE,  fig.width=9, fig.height=6 } 
 MuniMadrid <- matrix(scan("data/MuniMadrid.txt"), ncol = 2, byrow = T)
 data.co=read.table("data/Madrid_LOG_co50s10h.txt", header=TRUE)
 
@@ -335,19 +349,24 @@ persp(kc.co.2s.10h, borders = MuniMadrid, main = "3D Prediction map", theta = 0,
 ```
 
 
-<center><img src="img/madrid_pre.jpg" height="200px" /> 
+### Predicción y error de prediccion en 2D
+
+<center>
+<img src="img/madrid_pre.jpg" height="200px" /> 
 <img src="img/madrid_sd.jpg" height="200px" />
-<img src="img/madrid_3D.jpg" height="300px" />
 </center>
 
-
+### Predicción en 3D
+<center>
+<img src="img/madrid_3D.jpg" height="300px" />
+</center>
 
 ---
 
 ### [Paso 6.]{style="color:red"} Presentación de resultados
 
 
-```{r co_leaflet, echo=FALSE, fig.height = 5} 
+```{r co_leaflet, echo=FALSE} 
 
 # Paso la predicción a raster y lo proyecto a 4326
 
@@ -427,8 +446,8 @@ gema.faviles@uclm.es
 
 
 
-```{r eval=FALSE, include=FALSE, message=FALSE, results='hide', echo=FALSE}
-library(knitr)
-knit('Slides_geor_v1.0.Rmd', tangle=TRUE)
-source('Slides_geor_v1.0.R')
-```
+<!-- ```{r saca_cod_r, eval=FALSE, include=FALSE, message=FALSE, results='hide', echo=FALSE} -->
+<!-- library(knitr) -->
+<!-- knit('Slides_geor_v1.0.Rmd', tangle=TRUE) -->
+<!-- source('Slides_geor_v1.0.R') -->
+<!-- ``` -->
