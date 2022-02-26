@@ -51,6 +51,12 @@ knitr::opts_chunk$set(
 <img src="logo_mdsr_uclm.png" height="100px"/>
 </center>  
 
+::: {style="background-color:orange; padding: 1rem 1rem 1rem 1rem;margin: 3rem 3rem 3rem 3rem;border-radius: 1rem;"}
+***Nota***: 
+
+Se autoriza expresamente el uso de este material a la Universidad de Castilla-La Mancha para la docencia del [Máster en Data Science & Business Analytics (con R Software)](https://blog.uclm.es/tp-mbsba/programa/).
+:::
+
 ### Profesores
 
 <center>
