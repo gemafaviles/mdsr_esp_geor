@@ -39,7 +39,7 @@ knitr::opts_chunk$set(
   warning = FALSE,
   fig.show = TRUE,
   hiline = TRUE,
-  cache = TRUE,
+  cache = FALSE,
   fig.align = "center"
   )
 
@@ -178,7 +178,7 @@ Ejemplo tomado de **Montero, J. M., Fernández-Avilés, G., & Mateu, J. (2015). 
 
 ### [Objetivo]{style="color:blue"} Predicción puntual del nivel de CO en la ciudad de Madrid
 
-```{r ms_madrid, echo=FALSE,  fig.width=9, fig.height=6 } 
+```{r ms_madrid, echo=FALSE} 
 MuniMadrid <- matrix(scan("data/MuniMadrid.txt"), ncol = 2, byrow = T)
 data.co=read.table("data/Madrid_LOG_co50s10h.txt", header=TRUE)
 
