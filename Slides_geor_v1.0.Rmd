@@ -40,6 +40,7 @@ knitr::opts_chunk$set(
   warning = FALSE,
   fig.show = TRUE,
   hiline = TRUE,
+  cache = TRUE,
   fig.align = "center"
   )
 
