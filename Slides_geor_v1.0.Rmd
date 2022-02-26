@@ -3,8 +3,8 @@ title: "[**Análisis geoestadístico con `geoR`**]{style=color:red}"
 subtitle: "Máster en Data Science & Business Analytics (con R Software)"
 date: '`r format(Sys.Date(),"%d-%m-%Y")`'
 author:
- - Gema Fernández-Avilés (gema.faviles@uclm.es)
  - José-María Montero (jose.mlorenzo@uclm.es)
+ - Gema Fernández-Avilés (gema.faviles@uclm.es)
 category:
  - r
  - Data Science
