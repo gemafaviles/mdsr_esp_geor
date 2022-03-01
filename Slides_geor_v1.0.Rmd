@@ -333,19 +333,17 @@ str(kc.co.2s.10h)
 ---
  
 ### [Paso 6.]{style="color:red"}  Evaluación y presentación de resultados. Mapping
-```{r co_krig_sd, cecho=FALSE, include=FALSE}
-par(mfrow = c(1, 2), mar = c(3.5, 3.5, 1, 0), mgp = c(1.5, 0.5, 0))
-image(kc.co.2s.10h, borders = MuniMadrid, main = "2D prediction map", 
-      ylim = c(4461000, 4499622), col = rainbow(256))  # 
-points(estaciones, col = 1, lwd = 1)
-legend.krige(x.leg = c(424854, 456141), y.leg = c(4461000, 4462200), kc.co.2s.10h$predict, 
-    col = rainbow(256))
-image(kc.co.2s.10h, borders = MuniMadrid, val = sqrt(kc.co.2s.10h$krige.var), 
-    main = "Prediction SD map", ylim = c(4461000, 4499622), col = terrain.colors(64))
-points(estaciones, col = 1, lwd = 3)
-legend.krige(x.leg = c(424854, 456141), y.leg = c(4461000, 4462200), sqrt(kc.co.2s.10h$krige.var), 
-    col = terrain.colors(64))
+```{r co_krig_sd}
+# prediction map
+contour(kc.co.2s.10h,  borders = MuniMadrid, filled=TRUE, cex=1, col=terrain.colors(20))
+
+# sd map
+contour(kc.co.2s.10h,  values = sqrt(kc.co.2s.10h$krige.var), 
+        borders = MuniMadrid, filled=TRUE)
+
+
 ```
+
 
 
 ```{r co_3D, echo=FALSE, include=FALSE }
@@ -355,22 +353,7 @@ persp(kc.co.2s.10h, borders = MuniMadrid, main = "3D Prediction map", theta = 0,
 ```
 
 
-### Predicción y error de prediccion en 2D
-
-<center>
-<img src="img/madrid_pre.jpg" height="200px" /> 
-<img src="img/madrid_sd.jpg" height="200px" />
-</center>
-
-### Predicción en 3D
-<center>
-<img src="img/madrid_3D.jpg" height="300px" />
-</center>
-
----
-
-### [Paso 6.]{style="color:red"} Presentación de resultados
-
+### [Paso 6.]{style="color:red"}  Avanzado
 
 ```{r co_leaflet, echo=FALSE} 
 
@@ -452,8 +435,8 @@ gema.faviles@uclm.es
 
 
 
-<!-- ```{r saca_cod_r, eval=FALSE, include=FALSE, message=FALSE, results='hide', echo=FALSE} -->
-<!-- library(knitr) -->
-<!-- knit('Slides_geor_v1.0.Rmd', tangle=TRUE) -->
-<!-- source('Slides_geor_v1.0.R') -->
-<!-- ``` -->
+```{r saca_cod_r, eval=FALSE, include=FALSE, message=FALSE, results='hide', echo=FALSE}
+library(knitr)
+knit('Slides_geor_v1.0.Rmd', tangle=TRUE)
+source('Slides_geor_v1.0.R')
+```
